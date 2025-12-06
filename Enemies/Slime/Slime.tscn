@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://denqx1k7g8bte"]
+[gd_scene load_steps=33 format=3 uid="uid://denqx1k7g8bte"]
 
 [ext_resource type="Texture2D" uid="uid://wpt58rxydtdc" path="res://player/sprites/Shadow.png" id="1_0ae7n"]
 [ext_resource type="Script" uid="uid://f1jkvcomm2pm" path="res://Enemies/Scripts/enemy.gd" id="1_wyclx"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://jojx2n63yx20" path="res://Enemies/Slime/hit_00.wav" id="6_5fs0k"]
 [ext_resource type="Texture2D" uid="uid://1lardnhwthnx" path="res://Enemies/Slime/DestroySmoke.png" id="9_5fs0k"]
 [ext_resource type="Script" uid="uid://dvevotjw2gr7d" path="res://Enemies/Scripts/states/enemy_state_stun.gd" id="10_j1ull"]
+[ext_resource type="Script" uid="uid://c647r20y1io5e" path="res://Enemies/Scripts/states/enemy_state_destroy.gd" id="12_36jae"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j1ull"]
 radius = 12.0415945
@@ -776,6 +777,7 @@ script = ExtResource("10_j1ull")
 next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("12_36jae")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4
