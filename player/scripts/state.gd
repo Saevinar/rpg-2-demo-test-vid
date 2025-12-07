@@ -2,12 +2,15 @@ class_name State extends Node
 
 ## Stores a reference to the player that this state belongs to
 static var player: Player
-
-
+static var state_machine: PlayerStateMachine
 
 func _ready():
 	pass
 
+
+## what happens when we initialise this state?
+func init() -> void:
+	pass
 
 ## what happens when player enters this state?
 func Enter() -> void:

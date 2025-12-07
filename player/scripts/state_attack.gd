@@ -14,7 +14,7 @@ var attacking : bool = false
 
 ## what happens when player enters this state?
 func Enter() -> void:
-	player.UpdateAnimation("attack")
+	player.update_animation("attack")
 	animation_player.animation_finished.connect( EndAttack )
 	
 	audio.stream = attack_sound

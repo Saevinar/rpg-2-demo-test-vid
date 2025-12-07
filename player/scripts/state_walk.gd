@@ -7,7 +7,7 @@ class_name State_Walk extends State
 
 ## what happens when player enters this state?
 func Enter() -> void:
-	player.UpdateAnimation("walk")
+	player.update_animation("walk")
 	pass
 
 
@@ -23,8 +23,8 @@ func Process( _delta : float) -> State:
 	
 	player.velocity = player.direction * move_speed
 	
-	if player.SetDirection():
-		player.UpdateAnimation("walk")
+	if player.set_direction():
+		player.update_animation("walk")
 	return null
 
 ## ## what happens during the _physics_process update in this state?
