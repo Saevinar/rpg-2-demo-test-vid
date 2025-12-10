@@ -1,6 +1,7 @@
 extends Node
 
 const PLAYER = preload("uid://li1swv4t067q")
+const INVENTORY_DATA = preload("res://GUI/pause_menu/Inventory/player_inventory.tres")
 
 var player : Player
 var player_spawned :bool = false
