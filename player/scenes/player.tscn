@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://li1swv4t067q"]
+[gd_scene load_steps=38 format=3 uid="uid://li1swv4t067q"]
 
 [ext_resource type="Texture2D" uid="uid://bbwqlky6cs6wt" path="res://player/sprites/player.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://do2hjsd5turoc" path="res://player/scripts/player.gd" id="1_t0cpu"]
@@ -18,7 +18,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_edjgo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6g3n5"]
-radius = 5.0
+radius = 5.3851647
 
 [sub_resource type="Animation" id="Animation_8h4do"]
 length = 0.001
@@ -308,6 +308,9 @@ _data = {
 &"walk_up": SubResource("Animation_4qt65")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7x70"]
+size = Vector2(8.5, 8)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_mfato"]
 radius = 6.0
 
@@ -407,6 +410,7 @@ collision_mask = 256
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2d/AttackHurtBox"]
+position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_6g3n5")
 debug_color = Color(0.99049526, 0.049861662, 0.21464965, 0.41960785)
 
@@ -447,6 +451,16 @@ max_polyphony = 4
 
 [node name="Interactions" type="Node2D" parent="."]
 script = ExtResource("9_6g3n5")
+
+[node name="Area2D" type="Area2D" parent="Interactions"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
+position = Vector2(-0.25, 7)
+shape = SubResource("RectangleShape2D_l7x70")
+debug_color = Color(0, 0.64003426, 0.36055902, 0.41960785)
 
 [node name="HitBox" parent="." instance=ExtResource("12_d4apd")]
 collision_layer = 2

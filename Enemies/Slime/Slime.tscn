@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://denqx1k7g8bte"]
+[gd_scene load_steps=38 format=3 uid="uid://denqx1k7g8bte"]
 
 [ext_resource type="Texture2D" uid="uid://wpt58rxydtdc" path="res://player/sprites/Shadow.png" id="1_0ae7n"]
 [ext_resource type="Script" uid="uid://f1jkvcomm2pm" path="res://Enemies/Scripts/enemy.gd" id="1_wyclx"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://1lardnhwthnx" path="res://Enemies/Slime/DestroySmoke.png" id="9_5fs0k"]
 [ext_resource type="Script" uid="uid://dvevotjw2gr7d" path="res://Enemies/Scripts/states/enemy_state_stun.gd" id="10_j1ull"]
 [ext_resource type="Script" uid="uid://c647r20y1io5e" path="res://Enemies/Scripts/states/enemy_state_destroy.gd" id="12_36jae"]
+[ext_resource type="Script" uid="uid://dmu172u5q5d3k" path="res://Enemies/Scripts/drop_data.gd" id="13_mp7rs"]
+[ext_resource type="Resource" uid="uid://dfuiiqeowa4fe" path="res://GUI/Items/gem.tres" id="14_ke740"]
+[ext_resource type="Resource" uid="uid://dwnsdqtcvkr08" path="res://GUI/Items/potion.tres" id="15_ke740"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j1ull"]
 radius = 12.0415945
@@ -659,6 +662,19 @@ _data = {
 &"walk_up": SubResource("Animation_puctb")
 }
 
+[sub_resource type="Resource" id="Resource_ts4pi"]
+script = ExtResource("13_mp7rs")
+item = ExtResource("14_ke740")
+max_amount = 4
+metadata/_custom_type_script = "uid://dmu172u5q5d3k"
+
+[sub_resource type="Resource" id="Resource_2vvwu"]
+script = ExtResource("13_mp7rs")
+item = ExtResource("15_ke740")
+probability = 33.0
+max_amount = 3
+metadata/_custom_type_script = "uid://dmu172u5q5d3k"
+
 [sub_resource type="Animation" id="Animation_mmn81"]
 length = 0.001
 tracks/0/type = "value"
@@ -778,6 +794,7 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("12_36jae")
+drops = Array[ExtResource("13_mp7rs")]([SubResource("Resource_ts4pi"), SubResource("Resource_2vvwu")])
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4

@@ -24,8 +24,8 @@ func Enter() -> void:
 	attacking = true
 	
 	await  get_tree().create_timer(0.1).timeout
-	
-	hurt_box.monitoring = true
+	if attacking:
+		hurt_box.monitoring = true
 	pass
 
 
