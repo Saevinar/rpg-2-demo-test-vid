@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqapnfg1pqmeo"]
+
+[ext_resource type="Script" uid="uid://dddda21s0pvbj" path="res://levels/scripts/level.gd" id="1_e5xea"]
+[ext_resource type="PackedScene" uid="uid://cn3wcha3agkrb" path="res://tilemaps/dungeon_01.tscn" id="1_lxj3n"]
+[ext_resource type="PackedScene" uid="uid://cwqwlahru0acb" path="res://levels/player_spawn.tscn" id="2_e5xea"]
+[ext_resource type="PackedScene" uid="uid://ynm0tbds6feu" path="res://levels/level_transition.tscn" id="4_nxrri"]
+[ext_resource type="PackedScene" uid="uid://bcqsbwhpkthye" path="res://Interactables/dungeon01/pressure_plate.tscn" id="5_h0vwn"]
+[ext_resource type="PackedScene" uid="uid://bs8lfftb0ose" path="res://Interactables/dungeon01/barred_door.tscn" id="6_pq1o4"]
+[ext_resource type="PackedScene" uid="uid://dny2vsqvc70tr" path="res://Interactables/dungeon01/pushable_statue.tscn" id="7_eoaji"]
+
+[node name="01" type="Node2D"]
+script = ExtResource("1_e5xea")
+
+[node name="Dungeon01" parent="." instance=ExtResource("1_lxj3n")]
+rendering_quadrant_size = 32
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("2_e5xea")]
+position = Vector2(352, 172)
+
+[node name="LevelTransition" parent="." instance=ExtResource("4_nxrri")]
+position = Vector2(352, 240)
+scale = Vector2(0.70126426, 0.88928086)
+level = "uid://cq77ilfskm2ye"
+target_transition_area = "LevelTransition3"
+center_player = true
+side = 3
+
+[node name="LevelTransition2" parent="." instance=ExtResource("4_nxrri")]
+position = Vector2(351, 9.999954)
+scale = Vector2(0.70126426, 0.88928086)
+level = "uid://cq77ilfskm2ye"
+target_transition_area = "LevelTransition3"
+center_player = true
+side = 3
+
+[node name="PressurePlate" parent="." instance=ExtResource("5_h0vwn")]
+z_index = -1
+position = Vector2(256, 128)
+
+[node name="BarredDoor" parent="." instance=ExtResource("6_pq1o4")]
+position = Vector2(320, 53)
+
+[node name="PushableStatue" parent="." instance=ExtResource("7_eoaji")]
+position = Vector2(431, 132)
+
+[connection signal="activated" from="PressurePlate" to="BarredDoor" method="open_door"]
+[connection signal="deactivated" from="PressurePlate" to="BarredDoor" method="close_door"]
