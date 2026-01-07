@@ -12,7 +12,6 @@
 script = ExtResource("1_e5xea")
 
 [node name="Dungeon01" parent="." instance=ExtResource("1_lxj3n")]
-rendering_quadrant_size = 32
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_e5xea")]
 position = Vector2(352, 172)
@@ -26,12 +25,11 @@ center_player = true
 side = 3
 
 [node name="LevelTransition2" parent="." instance=ExtResource("4_nxrri")]
-position = Vector2(351, 9.999954)
+position = Vector2(353, 35.000004)
 scale = Vector2(0.70126426, 0.88928086)
-level = "uid://cq77ilfskm2ye"
-target_transition_area = "LevelTransition3"
+level = "uid://r17u6rr0vbod"
 center_player = true
-side = 3
+side = 2
 
 [node name="PressurePlate" parent="." instance=ExtResource("5_h0vwn")]
 z_index = -1

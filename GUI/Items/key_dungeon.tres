@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://2l7j13vra86d"]
+
+[ext_resource type="Script" uid="uid://bj6qi71yoaedo" path="res://GUI/Items/item_effects/item_effect.gd" id="1_v5o1s"]
+[ext_resource type="Script" uid="uid://lox8ir3q4q5a" path="res://GUI/Items/scripts/item_data.gd" id="2_0nmj4"]
+[ext_resource type="Texture2D" uid="uid://de0ugxdvigiku" path="res://GUI/Items/sprites/items.png" id="3_0nmj4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jekxi"]
+atlas = ExtResource("3_0nmj4")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_0nmj4")
+name = "Dungeon Key"
+description = "it open door yay"
+texture = SubResource("AtlasTexture_jekxi")
+metadata/_custom_type_script = "uid://lox8ir3q4q5a"

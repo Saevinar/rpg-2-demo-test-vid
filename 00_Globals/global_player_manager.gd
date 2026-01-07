@@ -1,7 +1,7 @@
 extends Node
 
 const PLAYER = preload("uid://li1swv4t067q")
-const INVENTORY_DATA = preload("res://GUI/pause_menu/Inventory/player_inventory.tres")
+const INVENTORY_DATA : InventoryData = preload("res://GUI/pause_menu/Inventory/player_inventory.tres")
 
 signal interact_pressed
 
@@ -43,3 +43,11 @@ func set_as_parent( _p :Node2D ) -> void:
 
 func unparent_player( _p :Node2D ) -> void:
 	_p.remove_child( player )
+
+
+
+
+
+func play_audio( _audio : AudioStream ) -> void:
+	player.audio.stream = _audio
+	player.audio.play()
