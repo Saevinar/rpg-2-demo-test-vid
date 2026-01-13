@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cq77ilfskm2ye"]
+[gd_scene load_steps=16 format=3 uid="uid://cq77ilfskm2ye"]
 
 [ext_resource type="PackedScene" uid="uid://oogbutx18jk" path="res://tilemaps/grass-01.tscn" id="1_gssw6"]
 [ext_resource type="Script" uid="uid://dddda21s0pvbj" path="res://levels/scripts/level.gd" id="1_lvlyw"]
@@ -11,6 +11,10 @@
 [ext_resource type="Resource" uid="uid://dfuiiqeowa4fe" path="res://GUI/Items/gem.tres" id="8_m0bjn"]
 [ext_resource type="Resource" uid="uid://rjv35oc4htjg" path="res://GUI/Items/apple.tres" id="9_pq0gk"]
 [ext_resource type="Resource" uid="uid://lgc3dng4lkeu" path="res://GUI/Items/stone.tres" id="10_rccd6"]
+[ext_resource type="PackedScene" uid="uid://bs2uo6260d473" path="res://npc/npc.tscn" id="12_m0bjn"]
+[ext_resource type="PackedScene" uid="uid://dd7ydoyre3rno" path="res://npc/npc_behaviour_wander.tscn" id="13_pq0gk"]
+[ext_resource type="Resource" uid="uid://wdirmx4lcwha" path="res://npc/00_npcs/npc_02.tres" id="13_rccd6"]
+[ext_resource type="Resource" uid="uid://mvrnotaa4dso" path="res://npc/00_npcs/npc_01.tres" id="15_x07sw"]
 
 [node name="01" type="Node2D"]
 script = ExtResource("1_lvlyw")
@@ -39,7 +43,7 @@ center_player = true
 side = 2
 
 [node name="Goblin" parent="." instance=ExtResource("5_j7fo1")]
-position = Vector2(307, 82)
+position = Vector2(280, -39)
 
 [node name="Goblin2" parent="." instance=ExtResource("5_j7fo1")]
 position = Vector2(169, -34)
@@ -67,3 +71,18 @@ item_data = ExtResource("9_pq0gk")
 [node name="ItemPickup3" parent="." instance=ExtResource("6_laie6")]
 position = Vector2(434, -50)
 item_data = ExtResource("10_rccd6")
+
+[node name="Npc" parent="." instance=ExtResource("12_m0bjn")]
+position = Vector2(110, 164)
+npc_resource = ExtResource("13_rccd6")
+
+[node name="NpcBehaviourWander" parent="Npc" instance=ExtResource("13_pq0gk")]
+wander_speed = 50.0
+
+[node name="Npc2" parent="." instance=ExtResource("12_m0bjn")]
+position = Vector2(279, 200)
+npc_resource = ExtResource("15_x07sw")
+
+[node name="NpcBehaviourWander" parent="Npc2" instance=ExtResource("13_pq0gk")]
+wander_range = 1
+wander_speed = 50.0
